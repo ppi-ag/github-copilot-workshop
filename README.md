@@ -176,11 +176,43 @@ Willkommen zum Hands-On Teil des GitHub Copilot Workshops! Dieses Repository beg
 
    **Hinweis:** Erkläre die Vorteile der Chat-gestützten Generierung für größere Klassen und zeige, wie die Dokumentation für bessere Lesbarkeit und Konsistenz angepasst werden kann.
 
+8. **Code analysieren und vereinfachen**
+   - Zeige, wie GitHub Copilot komplexen Code erklären und optimieren kann, indem die Methode `getTasksDueSoonComplicated()` im `TaskService` verwendet wird.
+
+   #### **1. Code erklären mit dem Command `/explain`**
+   - Markiere die Methode `getTasksDueSoonComplicated()` und öffne den Copilot Chat.
+   - Verwende den Command:
+     ```
+     /explain Explain the getTasksDueSoonComplicated() method
+     ```
+   - Beobachte die Antwort von Copilot, die z. B. eine Schritt-für-Schritt-Erklärung der Methode und ihrer Logik liefert:
+      - Filterung von Aufgaben basierend auf dem Fälligkeitsdatum.
+      - Sortierung von Aufgaben nach Priorität.
+      - Verwendung von Schleifen und Comparatoren.
+
+   **Erklärung:**
+   - Betone, wie Copilot helfen kann, komplexe Code-Stellen besser zu verstehen, insbesondere bei fremdem oder älterem Code.
+
+   #### **2. Code vereinfachen mit dem Command `/simplify`**
+   - Bleibe bei der Methode `getTasksDueSoonComplicated()` und öffne erneut den Copilot Chat.
+   - Verwende den Command:
+     ```
+     /simplify Simplify the getTasksDueSoonComplicated() method
+     ```
+   - Überprüfe den Vorschlag von Copilot, der unnötige Schleifen und Klassen durch Streams und Lambdas ersetzt.
+   - Ersetze den bestehenden Code durch die vereinfachte Version.
+
+   **Erklärung:**
+   - Zeige, wie Copilot den Code prägnanter und besser wartbar gestaltet, ohne die Funktionalität zu verändern.
+   - Betone die Zeitersparnis beim Refactoring und die Bedeutung von Lesbarkeit und Wartbarkeit im Code.
+
+   **Extra-Tipp:**
+   - Vergleiche die ursprüngliche und die vereinfachte Version, um den Unterschied und den Nutzen von Copilot klar zu machen.
 
 
 
-
-
+----------------------
+MARKER
 ----------------------
 
 
