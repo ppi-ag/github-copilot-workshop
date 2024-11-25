@@ -1,7 +1,7 @@
 package de.ppi.tasks.controller;
 
-
 import de.ppi.tasks.model.Task;
+import de.ppi.tasks.repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +14,7 @@ import java.util.List;
 public class TaskController {
 
     @Autowired
-    private de.ppi.tasks.repository.TaskRepository taskRepository;
+    private TaskRepository taskRepository;
 
     @GetMapping
     public List<Task> getAllTasks() {
