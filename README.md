@@ -187,3 +187,80 @@ Willkommen zum Hands-On Teil des GitHub Copilot Workshops! Dieses Repository beg
    - Diskutiere, wie Copilot den geänderten Code analysiert und eine präzise Commit-Nachricht vorschlägt.
    - Betone, dass dies besonders nützlich ist, um konsistente und aussagekräftige Commit-Nachrichten zu schreiben.
 
+#### **2.4 Integration mit dem Terminal**
+
+1. **Bash-Skript `system_check.sh` generieren, speichern und erweitern**
+
+   - **Ziel:** Generiere ein Bash-Skript, speichere es im Dateisystem, mache es ausführbar und erweitere es.
+   - **Schritte:**
+     1. Öffne den Copilot Chat und gib den folgenden Prompt ein:
+        ```
+        Schreibe ein Bash-Skript, das eine grundlegende Systemüberprüfung durchführt. 
+        Das Skript sollte:
+        - Die CPU- und Speicherauslastung überprüfen,
+        - Prozesse identifizieren, die die meisten Ressourcen verbrauchen,
+        - Den Speicherplatz aller eingebundenen Dateisysteme überwachen,
+        - Kritische Meldungen und Fehlermeldungen in den Systemlogs (z.B. aus syslog oder dmesg) zählen und anzeigen,
+        - Eine Zusammenfassung dieser Metriken zur schnellen Analyse ausgeben.
+        ```
+     2. Speichere das generierte Bash-Skript aus dem Chat über **Insert into new File** als `system_check.sh` im Dateisystem.
+     3. Der Chat zeigt automatisch den Befehl an, um das Skript ausführbar zu machen:
+        ```bash
+        chmod +x system_check.sh
+        ```
+        - Klicke auf **Insert Into Terminal**, um den Befehl direkt im Terminal auszuführen.
+     4. Führe das Skript aus:
+        ```bash
+        ./system_check.sh
+        ```
+     5. **Skript erweitern:** Öffne den Inline-Chat (Strg+I) und gib folgenden Prompt ein:
+        ```
+        Übersetze alle echo-Ausgaben im Skript ins Englische.
+        ```
+     6. Überprüfe die Änderungen und speichere das aktualisierte Skript.
+
+2. **Bash-Skript nach Python übersetzen**
+   - **Ziel:** Generiere ein äquivalentes Python-Skript basierend auf dem Bash-Skript.
+   - **Schritte:**
+     1. Öffne den Copilot Chat und gib folgenden Prompt ein:
+        ```
+        Übersetze das folgende Bash-Skript in ein Python-Skript.
+        ```
+     2. Überprüfe die generierte Python-Version und speichere sie als `system_check.py`.
+
+3. **Fehler in Python-Skript beheben**
+   - **Ziel:** Simuliere einen einfachen Fehler und lasse ihn automatisch beheben.
+   - **Schritte:**
+     1. Baue absichtlich einen Fehler in das Python-Skript ein, z. B. ändere das letzte `print`-Statement zu `pprint`.
+     2. Führe das Skript aus und beobachte die Fehlermeldung im Terminal.
+     3. Öffne den Copilot Chat und gib den folgenden Prompt ein:
+        ```
+        @terminal /explain Can you fix the problem?
+        ```
+     4. Überprüfe die Antwort von Copilot im Chat.
+        - Klicke auf **Apply in Editor**, um den vorgeschlagenen Fix in das Skript zu übernehmen.
+     5. Übernimm die Änderung im Editor durch **Apply**.
+     6. Führe das Skript erneut aus, um sicherzustellen, dass der Fehler behoben wurde.
+
+   **Erklärung:**
+   - Zeige, wie Copilot den Fehler analysiert und basierend auf der Fehlermeldung einen passenden Fix vorschlägt.
+   - Diskutiere die Vorteile dieser Funktion bei der schnellen Fehlerbehebung in Skripten und Anwendungen.
+
+### **3. GitHub Copilot CLI**
+
+1. **CLI-Kommandos mit Copilot optimieren**
+   - **Ziel:** Demonstriere, wie Copilot in der Kommandozeile komplexe Aufgaben erleichtert.
+   - **Schritte:**
+     1. Prompt für das erste Kommando:
+        ```
+        Finde alle Python-Skripte, in diesem und allen Unterverzeichnissen, absteigend sortiert nach Größe, in denen die Zeichenkette PPI zu finden ist.
+        ```
+     2. Revise Prompt, um die Dateigröße auszugeben:
+        ```
+        Bitte die Größe der Dateien mit ausgeben.
+        ```
+     3. Überprüfe den Vorschlag, führe das Kommando aus und analysiere die Ergebnisse.
+
+   **Erklärung:**
+   - Zeige, wie Copilot komplexe Kommandos vorschlägt und verbessert.
+   - Betone, dass die CLI-Integration besonders für wiederkehrende oder komplexe Terminalaufgaben nützlich ist.
