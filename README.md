@@ -28,6 +28,11 @@ Willkommen zum Hands-On Teil des GitHub Copilot Workshops! Dieses Repository beg
       ```
         - Beispiel: `private int priority;`
 
+    - **Vorschläge im Menü „GitHub Copilot“ überprüfen:**
+        - Während du Code vervollständigst, kannst du rechts im IntelliJ-Menü unter „GitHub Copilot“ alle alternativen Vorschläge ansehen.
+        - Probiere aus, wie du die Vorschläge durchblättern und auswählen kannst, falls der initial vorgeschlagene Code nicht passend ist.
+        - **Hinweis:** Auch wenn diese Funktion nicht immer genutzt wird, ist sie hilfreich, um verschiedene Ansätze zu vergleichen.
+
 2. **Chat verwenden:**
     - Verwende den Copilot Chat, um automatisch die Endpunkte für **Anlegen**, **Ändern** und **Löschen** von Tasks zu erstellen:
       ```java
@@ -92,7 +97,9 @@ Willkommen zum Hands-On Teil des GitHub Copilot Workshops! Dieses Repository beg
         - Betone, wie der Chat dabei hilft, schnell Kontextinformationen zu Annotationen oder Framework-Details bereitzustellen.
         - Zeige, wie die Antworten direkt zur besseren Dokumentation oder Weiterentwicklung des Codes beitragen können.
 
-5. **Komplexere Methode generieren lassen**
+#### **1.3 GitHub Copilot: Advanced**
+
+1. **Komplexere Methode generieren lassen**
     - Nutze Copilot, um eine komplexere Methode zu erstellen, z. B. eine, die Tasks nach Fälligkeit filtert und nach Priorität sortiert:
       ```java
       // Get all tasks that are due within the next 7 days, sorted by priority
@@ -116,7 +123,7 @@ Willkommen zum Hands-On Teil des GitHub Copilot Workshops! Dieses Repository beg
     - **Erklärung:**
         - Zeige, wie Copilot kontextbezogene Logik generiert, einschließlich Datumshandling und Stream-APIs.
 
-6. **Unit-Test für die komplexe Methode generieren**
+2. **Unit-Test für die komplexe Methode generieren**
    - Verwende den Copilot Chat, um mit dem Command `/tests` automatisch einen Unit-Test für die Methode `getTasksDueSoon()` generieren zu lassen:
      ```java
      // Generate a unit test for the getTasksDueSoon() method
@@ -159,7 +166,7 @@ Willkommen zum Hands-On Teil des GitHub Copilot Workshops! Dieses Repository beg
         - Zeige, wie Copilot Testdaten generiert, den Testfall strukturiert und Assertions hinzufügt.
         - Betone die Zeitersparnis bei der Testgenerierung und die Notwendigkeit von Testanpassungen bei komplexen Szenarien.
 
-7. **Javadoc für die Klasse und Methode generieren**
+3. **Javadoc für die Klasse und Methode generieren**
     - Demonstriere, wie Javadoc mit GitHub Copilot für einzelne Methoden und die gesamte Klasse erstellt werden kann.
 
    #### **Methode 1: Durch Lostippen von `/**` vor der Methode**
@@ -176,14 +183,14 @@ Willkommen zum Hands-On Teil des GitHub Copilot Workshops! Dieses Repository beg
 
    **Hinweis:** Erkläre die Vorteile der Chat-gestützten Generierung für größere Klassen und zeige, wie die Dokumentation für bessere Lesbarkeit und Konsistenz angepasst werden kann.
 
-8. **Code analysieren und vereinfachen**
+4. **Code analysieren und vereinfachen**
    - Zeige, wie GitHub Copilot komplexen Code erklären und optimieren kann, indem die Methode `getTasksDueSoonComplicated()` im `TaskService` verwendet wird.
 
    #### **1. Code erklären mit dem Command `/explain`**
    - Markiere die Methode `getTasksDueSoonComplicated()` und öffne den Copilot Chat.
    - Verwende den Command:
      ```
-     /explain Explain the getTasksDueSoonComplicated() method
+     /explain
      ```
    - Beobachte die Antwort von Copilot, die z. B. eine Schritt-für-Schritt-Erklärung der Methode und ihrer Logik liefert:
       - Filterung von Aufgaben basierend auf dem Fälligkeitsdatum.
@@ -193,23 +200,49 @@ Willkommen zum Hands-On Teil des GitHub Copilot Workshops! Dieses Repository beg
    **Erklärung:**
    - Betone, wie Copilot helfen kann, komplexe Code-Stellen besser zu verstehen, insbesondere bei fremdem oder älterem Code.
 
-   #### **2. Code vereinfachen mit dem Command `/simplify`**
-   - Bleibe bei der Methode `getTasksDueSoonComplicated()` und öffne erneut den Copilot Chat.
+   #### **2. Code vereinfachen mit Inline-Chat und `/simplify`**
+   - Selektiere die Methode `getTasksDueSoonComplicated()` im Editor.
+   - Öffne den Inline-Chat mit `Alt + Enter` (oder die entsprechende Shortcut-Kombination deiner IDE).
    - Verwende den Command:
      ```
-     /simplify Simplify the getTasksDueSoonComplicated() method
+     /simplify Using Stream API
      ```
-   - Überprüfe den Vorschlag von Copilot, der unnötige Schleifen und Klassen durch Streams und Lambdas ersetzt.
-   - Ersetze den bestehenden Code durch die vereinfachte Version.
+   - Gehe im Vorschlag von Copilot auf **Preview**, um den vereinfachten Code anzusehen.
+   - Übernehme den Vorschlag durch **Accept**, falls die Änderungen korrekt sind.
 
    **Erklärung:**
-   - Zeige, wie Copilot den Code prägnanter und besser wartbar gestaltet, ohne die Funktionalität zu verändern.
-   - Betone die Zeitersparnis beim Refactoring und die Bedeutung von Lesbarkeit und Wartbarkeit im Code.
+   - Zeige, wie Copilot mithilfe von Streams und Lambdas redundante Schleifen ersetzt und den Code klarer strukturiert.
+   - Betone, dass der Inline-Chat besonders praktisch für punktuelles Refactoring ist und direkt im Editor verwendet werden kann.
 
    **Extra-Tipp:**
-   - Vergleiche die ursprüngliche und die vereinfachte Version, um den Unterschied und den Nutzen von Copilot klar zu machen.
+   - Zeige den direkten Vergleich zwischen der ursprünglichen und der vereinfachten Version, um die Vorteile von Copilot deutlich zu machen.
 
+5. **Fehlschlagenden Unit-Test reparieren**
+- Zeige, wie GitHub Copilot mithilfe des `/fix` Commands fehlschlagende Unit-Tests analysieren und korrigieren kann.
 
+#### **Schritte:**
+1. **Test manipulieren:**
+    - Ändere den Code in einem Unit-Test so, dass der Test fehlschlägt, z. B. durch Verfälschen eines Werts oder Ändern der erwarteten Ausgabe.
+    - Führe den Test aus, um den Fehler auszulösen, und kopiere den Stacktrace des Fehlers.
+
+2. **Fehler analysieren:**
+    - Öffne den Copilot Chat und verwende den Command:
+      ```
+      /fix Fix the failing unit test
+      ```
+    - Füge den Stacktrace in den Chat ein, um Copilot mehr Kontext zu geben.
+
+3. **Vorschlag übernehmen:**
+    - Überprüfe den Lösungsvorschlag von Copilot und übertrage die Korrektur in den Code.
+
+4. **Test erneut ausführen:**
+    - Starte den Test erneut, um zu zeigen, dass der Fehler behoben wurde und der Test jetzt grün ist.
+
+**Erklärung:**
+- Zeige, wie Copilot den Fehler auf Basis des Stacktraces analysiert und eine Lösung vorschlägt.
+- Betone die Zeitersparnis und den Nutzen bei der Fehlersuche, insbesondere bei komplexen Fehlern.
+
+### **2. Wechsel zu VSCode**
 
 ----------------------
 MARKER
@@ -256,25 +289,3 @@ MARKER
      ```
 
 ---
-
-## **Repository-Struktur**
-```plaintext
-copilot-workshop/
-├── src/
-│   ├── main/
-│   │   ├── java/com/example/tasks/
-│   │   │   ├── model/
-│   │   │   │   └── Task.java
-│   │   │   ├── repository/
-│   │   │   │   └── TaskRepository.java
-│   │   │   ├── controller/
-│   │   │   │   └── TaskController.java
-│   │   └── resources/
-│   │       ├── application.properties
-│   │       └── data.sql
-│   └── test/
-│       ├── java/com/example/tasks/
-│       │   └── TaskControllerTest.java
-├── scripts/
-│   └── system_monitor.sh
-├── README.md
