@@ -1,5 +1,7 @@
 package de.ppi.tasks.model;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,4 +17,6 @@ public class Task {
     private String title;
     private String description;
     private boolean completed;
+    private LocalDate dueDate;
+    private int priority;
 }
