@@ -249,18 +249,41 @@ Willkommen zum Hands-On Teil des GitHub Copilot Workshops! Dieses Repository beg
 ### **3. GitHub Copilot CLI**
 
 1. **CLI-Kommandos mit Copilot optimieren**
-   - **Ziel:** Demonstriere, wie Copilot in der Kommandozeile komplexe Aufgaben erleichtert.
-   - **Schritte:**
-     1. Prompt für das erste Kommando:
-        ```
-        Finde alle Python-Skripte, in diesem und allen Unterverzeichnissen, absteigend sortiert nach Größe, in denen die Zeichenkette PPI zu finden ist.
-        ```
-     2. Revise Prompt, um die Dateigröße auszugeben:
-        ```
-        Bitte die Größe der Dateien mit ausgeben.
-        ```
-     3. Überprüfe den Vorschlag, führe das Kommando aus und analysiere die Ergebnisse.
+   - **Ziel:** Demonstriere, wie Copilot CLI komplexe Aufgaben in der Kommandozeile erleichtert.
 
-   **Erklärung:**
-   - Zeige, wie Copilot komplexe Kommandos vorschlägt und verbessert.
-   - Betone, dass die CLI-Integration besonders für wiederkehrende oder komplexe Terminalaufgaben nützlich ist.
+   #### **Erster Versuch: Suche nach Java-Dateien**
+   1. Wechsel in die **WSL2 Ubuntu Shell**.
+   2. Weise kurz darauf hin, dass die GitHub Copilot CLI separat installiert werden muss, und verweise auf die Dokumentation von GitHub Copilot CLI (falls benötigt).
+   3. Starte die GitHub Copilot CLI mit dem Alias:
+      ```bash
+      ghcs
+      ```
+   4. Die CLI fragt: **What would you like the shell command to do?**
+      - Gib den folgenden Prompt ein:
+        ```
+        Finde alle Java files, in diesem und allen Unterverzeichnissen, absteigend sortiert nach Größe, in denen die Zeichenkette String zu finden ist.
+        ```
+   5. Wähle **Execute command**, um das vorgeschlagene Kommando auszuführen.
+   6. Überprüfe die Ergebnisse und diskutiere die Nützlichkeit von Copilot CLI bei der Erstellung komplexer Shell-Kommandos.
+
+   #### **Zweiter Versuch: Docker-Container anzeigen und verfeinern**
+   1. Starte erneut die GitHub Copilot CLI:
+      ```bash
+      ghcs
+      ```
+   2. Prompt direkt eingeben:
+      ```
+      Zeige alle laufenden Docker-Container.
+      ```
+   3. Wähle **Execute command**, um die initiale Liste der laufenden Docker-Container anzuzeigen.
+   4. Verfeinere das Kommando mit **Revise command**:
+      ```
+      Zeige alle laufenden Docker-Container, die "ppi" im Namen haben.
+      ```
+   5. Führe das überarbeitete Kommando erneut aus, indem du **Execute command** auswählst.
+   6. Überprüfe die Ergebnisse und betone die Flexibilität der CLI, komplexe Kommandos schrittweise zu optimieren.
+
+   #### **Erklärung:**
+   - Zeige, wie Copilot CLI in verschiedenen Kontexten nützlich ist, von Dateisuche bis Docker-Management.
+   - Diskutiere, wie die Verfeinerung über **Revise command** den Workflow iterativ verbessert.
+   - Betone die Vorteile der automatisierten Generierung für wiederkehrende oder komplexe Aufgaben.
