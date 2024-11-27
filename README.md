@@ -115,15 +115,75 @@ Willkommen zum Hands-On Teil des GitHub Copilot Workshops! Dieses Repository beg
       ```
     - Füge den Stacktrace in den Chat ein, um den Fehlerkontext bereitzustellen.
 
----
-
 ### **2. Weiter in VSCode**
 
-#### **2.1 Verbesserte Integration**
-1. Demonstriere die Code-Vervollständigung und das Terminal in VSCode.
-2. Ergänze einen neuen `PUT`-Endpunkt.
+#### **2.1 Orientierung und Einrichtung**
+1. **GitHub Copilot Extensions:**
+   - Öffne den Extension Marketplace in VSCode und suche nach „GitHub Copilot“.
+   - Zeige die beiden Extensions:
+     - **GitHub Copilot**
+     - **GitHub Copilot Chat**
+   - Hinweise:
+     - Aktiviere Auto-Update für beide Extensions.
+     - Zeige die Option „Switch to Release Version“ bzw. „Switch to Pre-Release Version“.
+     - Weise auf die beeindruckenden **22 Millionen Installationen** hin, um die Verbreitung und Beliebtheit zu verdeutlichen.
 
-#### **2.2 Skript generieren**
-1. Schreibe einen Kommentar wie:
-   ```bash
-   # Create a Bash script to monitor system load
+2. **Tray-Icon und Navigation:**
+   - Zeige das GitHub Copilot Tray-Icon unten rechts in der Statusleiste.
+   - Navigiere von dort aus zu:
+     - **Settings:** Einstellungen für Copilot anpassen.
+     - **Keyboard Settings:** Zeige, wie Tastenkombinationen konfiguriert werden können.
+     - **Chat:** Öffne den Chat direkt über das Tray-Icon.
+
+3. **Settings und Features:**
+   - Öffne die Einstellungen für GitHub Copilot und führe die Teilnehmer durch einige interessante Optionen:
+     - **Experimental Features:** Zeige, welche neuen Funktionen getestet werden können.
+     - **Autocompletion Settings:** Passe Verhalten und Vorschläge von Copilot an.
+   - **Besonderer Hinweis:** 
+     - Erkläre, wie eine `.github/copilot-instructions.md` Datei verwendet werden kann, um benutzerdefinierte Anweisungen für Copilot hinzuzufügen. Dies ist besonders nützlich für projektspezifische Anforderungen.
+
+#### **2.2 Verbesserte Integration**
+
+1. **Neuen komplexen Endpunkt generieren und refactoren**
+
+   - **Ziel:** Erstelle einen Endpunkt, der Aufgaben nach ihrer Priorität gruppiert und innerhalb jeder Prioritätsgruppe nach ihrem Fälligkeitsdatum sortiert.
+
+   #### **Schritte:**
+   1. Öffne die Klasse `TaskController`.
+   2. Gib den folgenden Prompt im Copilot Chat ein:
+      ```
+      Create a REST endpoint to group tasks by priority and sort them by due date within each priority group.
+      ```
+   3. Überprüfe den generierten Code im Chat und wähle **Apply in Editor**, um die Methode in die Klasse `TaskController` einzufügen.
+   4. Übernehme den generierten Code im Editor, indem du auf **Accept Changes** klickst.
+
+   #### **Refactoring:**
+   1. Öffne die Methode im Editor und drücke `Strg+I`, um den Inline-Chat zu öffnen.
+   2. Gib den folgenden Prompt ein:
+      ```
+      Avoid using Stream API.
+      ```
+   3. Überprüfe den Refactoring-Vorschlag von Copilot und übernehme die Änderungen.
+
+   #### **Erklärung:**
+   - Zeige den ursprünglichen Code mit der Stream-API und den refactorisierten Code ohne Streams.
+   - Diskutiere die Vorteile und Nachteile der jeweiligen Ansätze:
+     - **Stream-API:** Kürzer und ausdrucksstärker.
+     - **Ohne Streams:** Traditionelle Schleifen, die manchmal einfacher zu debuggen sind.
+
+#### **2.3 Commit-Nachrichten automatisch generieren**
+
+1. **Ziel:** Zeige, wie GitHub Copilot eine Commit-Nachricht basierend auf den Änderungen im Repository vorschlägt.
+
+   #### **Schritte:**
+   1. Nimm Änderungen am Code vor, z. B. füge den neuen Endpunkt hinzu oder refactore eine Methode.
+   2. Öffne das Git-Panel in VSCode (`Strg+Shift+G`) oder die Source Control Ansicht.
+   3. Wähle die geänderten Dateien aus und klicke auf **Stage Changes**.
+   4. Gehe in das Textfeld für die Commit-Nachricht und gib einen Kommentar ein, z. B. `Generate commit message`.
+   5. Der Vorschlag von Copilot erscheint automatisch basierend auf den Änderungen.
+   6. Überprüfe die vorgeschlagene Nachricht und übernimm sie, falls sie passend ist.
+
+   #### **Erklärung:**
+   - Diskutiere, wie Copilot den geänderten Code analysiert und eine präzise Commit-Nachricht vorschlägt.
+   - Betone, dass dies besonders nützlich ist, um konsistente und aussagekräftige Commit-Nachrichten zu schreiben.
+
