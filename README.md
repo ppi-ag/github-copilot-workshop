@@ -246,6 +246,32 @@ Willkommen zum Hands-On Teil des GitHub Copilot Workshops! Dieses Repository beg
    - Zeige, wie Copilot den Fehler analysiert und basierend auf der Fehlermeldung einen passenden Fix vorschlägt.
    - Diskutiere die Vorteile dieser Funktion bei der schnellen Fehlerbehebung in Skripten und Anwendungen.
 
+#### **2.5 SQL-Generierung aus DDL**
+
+1. **SQL für komplexe Abfragen generieren**
+
+    - **Ziel:** Zeige, wie GitHub Copilot mit einer bestehenden Datenbankstruktur (DDL) komplexe SQL-Abfragen erstellen kann.
+    - **Schritte:**
+        1. Öffne die Datei `sql/create.sql`, die die Tabellenstruktur enthält.
+        2. Hebe die Datei über das **+ Symbol** im Copilot Chat in den Kontext (manuelles Hinzufügen der Datei).
+        3. Gib im Copilot Chat folgenden Prompt ein:
+           ```
+           Write an SQL query to fetch all tasks along with their project name, assigned user, and the number of comments.
+           ```
+        4. Überprüfe die generierte Abfrage und kopiere sie in eine neue Datei, z. B. `sql/task_report.sql`.
+
+   #### **Optional: Abfrage anpassen**
+    - Gib im Chat folgenden Prompt ein:
+      ```
+      Modify the query to include only tasks that are not completed and sort them by project name and priority.
+      ```
+    - Übernehme die angepasste Abfrage und speichere sie ab.
+
+2. **Erklärung:**
+    - Zeige, wie Copilot basierend auf der DDL-Datei komplexe SQL-Abfragen generiert, ohne dass die gesamte Datei in den Chat kopiert werden muss.
+    - Diskutiere, wie die Abfragen durch kurze Prompts verfeinert und angepasst werden können.
+    - Betone den Zeitvorteil bei der Erstellung komplexer SQL-Statements, insbesondere bei umfangreichen Tabellenstrukturen.
+
 ### **3. GitHub Copilot CLI**
 
 1. **CLI-Kommandos mit Copilot optimieren**
