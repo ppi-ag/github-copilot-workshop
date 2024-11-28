@@ -115,6 +115,62 @@ Willkommen zum Hands-On Teil des GitHub Copilot Workshops! Dieses Repository beg
       ```
     - Füge den Stacktrace in den Chat ein, um den Fehlerkontext bereitzustellen.
 
+5. **Reguläre Ausdrücke erklären und vereinfachen**
+
+   - **Ziel:** Demonstriere, wie GitHub Copilot im normalen Chat reguläre Ausdrücke und komplette Klassen analysieren, erklären und optimieren kann.
+   - **Bezug:** Die Methode `validateTaskTitle` in der Klasse `TaskValidationService` validiert Titel für Tasks mit einem regulären Ausdruck.
+
+   #### **Schritte:**
+
+   1. Öffne die Klasse `TaskValidationService`.
+   2. Hebe die gesamte Klasse im Editor hervor.
+   3. Öffne den Copilot Chat und gib den folgenden Prompt ein:
+      ```
+      /explain Explain the TaskValidationService class.
+      ```
+   4. Lass Copilot eine Übersicht über die Klasse und ihre Funktionen geben:
+      - **Erklärung:** Die Klasse enthält eine Methode zur Validierung von Task-Titeln basierend auf einem regulären Ausdruck.
+
+   #### **Regulären Ausdruck analysieren:**
+   1. Markiere den regulären Ausdruck in der Methode:
+      ```java
+      String regex = "^[A-Za-z][A-Za-z0-9 _-]{4,49}$";
+      ```
+   2. Gib im Copilot Chat den Prompt ein:
+      ```
+      Explain this regular expression.
+      ```
+   3. Lass Copilot den Ausdruck erklären:
+      - **Erklärung:** Der reguläre Ausdruck validiert Titel, die mit einem Buchstaben beginnen, zwischen 5 und 50 Zeichen lang sind, und nur Buchstaben, Zahlen, Leerzeichen, Unterstriche oder Bindestriche enthalten.
+
+   #### **Regulären Ausdruck vereinfachen:**
+   1. Gib im Copilot Chat den folgenden Prompt ein:
+      ```
+      /simplify Simplify this regular expression while keeping it functional.
+      ```
+   2. Überprüfe den Vorschlag von Copilot, z. B.:
+      ```java
+      String regex = "^[\\w _-]{5,50}$";
+      ```
+   3. Diskutiere die Vereinfachung:
+      - Der optimierte Ausdruck ist kürzer, erlaubt jedoch zusätzliche Eingaben wie Zahlen am Anfang des Titels. Prüfe, ob diese Änderung akzeptabel ist.
+
+   #### **Erklärung:**
+   - Diskutiere die Vor- und Nachteile der Optimierung:
+      - **Ursprünglich:** Striktere Validierung, aber komplizierter zu lesen.
+      - **Optimiert:** Kürzer und einfacher, aber potenziell weniger restriktiv.
+   - Betone, wie Copilot hilft, den richtigen Balancepunkt zwischen Lesbarkeit und Funktionalität zu finden.
+
+   #### **Zusatzoption:**
+   - Frage im Chat:
+     ```
+     Suggest additional patterns to validate task titles.
+     ```
+   - Zeige, wie Copilot alternative Ansätze vorschlägt, um die Validierungslogik weiter anzupassen.
+
+   **Hinweis:** Dieser Case zeigt, wie reguläre Ausdrücke praktisch für die Validierung von Eingaben in der Task-Entität verwendet werden können und wie Copilot bei der Analyse und Optimierung hilft.
+
+
 ### **2. Weiter in VSCode**
 
 #### **2.1 Orientierung und Einrichtung**
