@@ -7,6 +7,7 @@
 ### **1.1 Einrichtung & Einstellungen**
 
 1. Plugin-Installation (GitHub Copilot Plugin).
+    Nightly-Version über einstellungen -> update channel
 
 2. Einstellungen anpassen (Preferences > Plugins > GitHub Copilot).
     - Standard-Shortcuts sind teilweise mit deutscher Tastatur nicht nutzbar
@@ -31,11 +32,11 @@
 #### **Completion durch Wort-für-Wort**
 
 - Wort-für-Wort-completion (Strg-Rechts):
-- Line-completion (Strg-Alt-Enter):
+- Line-completion (Strg-Alt-Rechts):
 
 ```java
+
 TaskValidationService
-        ...
 
 public boolean validateAllTaskFields(Task task) {
     return task.getDescription().matches("^[A-Za-z0-9 _-]{4,49}$")
@@ -69,15 +70,21 @@ public boolean validateAllTaskFields(Task task) {
    List<Task> findByCompleted(boolean completed);
    ```
 
+<<<<<<<<<<<<<
+INLINE-CHAT 
+
 - alle Tasks innerhalb der nächsten 7 Tage filtern und nach Priorität sortieren.
     - Prompt im Chat:
       ```
       Create a method in TaskController to fetch tasks due within the next 7 days, sorted by priority.
+      getTasksDueSoon
+      sollte TaskService.getTasksDueSoonComplicated verwenden
       ```
+>>>>>>>>>>>>>>>>>>>>
 
 ### Code analysieren und vereinfachen
 
-- Methode `getTasksDueSoonComplicated()` in der Klasse `TaskService`
+- TaskService Methode `getTasksDueSoonComplicated()` in der Klasse `TaskService`
     - Code erklären
         - Markiere die Methode `getTasksDueSoonComplicated()` im Editor.
         - Prompt im Chat:
@@ -99,11 +106,15 @@ public boolean validateAllTaskFields(Task task) {
 
 ### Unit-Tests
 
+- StringProcessor.isPalindrome
+
 - Nutze den Command `/tests`, um automatisch einen Unit-Test für die generierte Methode zu erstellen.
     - Prompt im Chat:
+    
 
 ```
-        Generate a unit test for the method that fetches tasks due within the next 7 days, sorted by priority.
+        TaskService.getTasksDueSoonComplicated
+        Generate a unit test for getTasksDueSoonComplicated that fetches tasks due within the next 7 days, sorted by priority.
 ```
 
 #### Tests reparieren
@@ -198,16 +209,26 @@ Explain this regular expression.
         - **Experimental Features:** Zeige, welche neuen Funktionen getestet werden können.
         - **Autocompletion Settings:** Passe Verhalten und Vorschläge von Copilot an.
     - **Besonderer Hinweis:**
-        - Erkläre, wie eine `.github/copilot-instructions.md` Datei verwendet werden kann, um benutzerdefinierte Anweisungen
-          - projektspezifische Anforderungen.
-          - "immer java"
-          - "immer englisch"
-          - "stream api bevorzugen"
+        - Erkläre, wie eine `.github/copilot-instructions.md` Datei verwendet werden kann, um benutzerdefinierte
+          Anweisungen
+            - projektspezifische Anforderungen.
+            - "immer java"
+            - "immer englisch"
+            - "stream api bevorzugen"
 
 ### **2.2 Verbesserte Integration**
 
+
 1. **Neuen komplexen Endpunkt generieren und refactoren**
 
+    - beim tippen erzeugen
+        - trigger inline suggestions alt - ^
+        - word für word strg - rechts
+        - line by line strg - alt - rechts
+        - durch vorschläge gehen alt-ß / alt-´
+        - open completions strg-enter
+        - edits ctrl - shift - i 
+        
    ### **Schritte:**
     1. Öffne die Klasse `TaskController`.
     2. Gib den folgenden Prompt im Copilot Chat ein:
@@ -311,7 +332,6 @@ Explain this regular expression.
       ```
       Modify the query to include only tasks that are not completed and sort them by project name and priority.
       ```
-    - Übernehme die angepasste Abfrage und speichere sie ab.
 
 ## **3. GitHub Copilot CLI**
 
@@ -331,11 +351,13 @@ Explain this regular expression.
           ```
           Finde alle Java files, in diesem und allen Unterverzeichnissen, absteigend sortiert nach Größe, in denen die Zeichenkette String zu finden ist.
           ```
-    5. Wähle **Execute command**, um das vorgeschlagene Kommando auszuführen.
-    6. Überprüfe die Ergebnisse und diskutiere die Nützlichkeit von Copilot CLI bei der Erstellung komplexer
-       Shell-Kommandos.
+    5. Powershell:
+        ```
+        gh copilot suggest "in powershell Finde alle Java files, in diesem und allen Unterverzeichnissen, absteigend sortiert nach Größe, in denen die Zeichenkette String zu finden ist und gebe sie aus"
+        ```
 
-   ### **Zweiter Versuch: Docker-Container anzeigen und verfeinern**
+### **Zweiter Versuch: Docker-Container anzeigen und verfeinern**
+
     1. Starte erneut die GitHub Copilot CLI:
        ```bash
        ghcs
@@ -352,15 +374,18 @@ Explain this regular expression.
     5. Führe das überarbeitete Kommando erneut aus, indem du **Execute command** auswählst.
     6. Überprüfe die Ergebnisse und betone die Flexibilität der CLI, komplexe Kommandos schrittweise zu optimieren.
 
-   ### Terminal chat
-   canary channel nötig
+### Terminal chat
 
-   ### Powershell (prüfen wie context powershell zu setzen ):
-   gh copilot suggest "List recursively directories and print only directories with file name starting with test"
-   output oft bash, context setzen powershell
-   gh copilot suggest "in powershell show all ports blocked by processes"
+canary channel nötig
 
-   ### **Erklärung:**
+### Powershell (prüfen wie context powershell zu setzen ):
+
+gh copilot suggest "List recursively directories and print only directories with file name starting with test"
+output oft bash, context setzen powershell
+gh copilot suggest "in powershell show all ports blocked by processes"
+
+### **Erklärung:**
+
     - Zeige, wie Copilot CLI in verschiedenen Kontexten nützlich ist, von Dateisuche bis Docker-Management.
     - Diskutiere, wie die Verfeinerung über **Revise command** den Workflow iterativ verbessert.
     - Betone die Vorteile der automatisierten Generierung für wiederkehrende oder komplexe Aufgaben.
