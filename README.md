@@ -26,7 +26,10 @@ Willkommen zum Hands-On Teil des GitHub Copilot Workshops! Dieses Repository beg
            ```java
            // Add a priority field for tasks
            ```
-
+        3. Lass Copilot eine längere Methode generieren und zeige wie man eine ganze Completion (mit Tab) oder nur Teile davon (mit Strg+Rechts) übernimmt. 
+           ```java
+          // Generate a custom toString method that outputs fields in a JSON-like format
+           ``` 
     - **Vorschläge im Menü „GitHub Copilot“ überprüfen:**
         - Während du die Felder hinzufügst, kannst du im Menü „GitHub Copilot“ alternative Vorschläge ansehen.
 
