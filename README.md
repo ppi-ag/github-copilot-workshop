@@ -69,22 +69,15 @@ Willkommen zum Hands-On Teil des GitHub Copilot Workshops! Dieses Repository beg
       Create a method in TaskController to fetch tasks due within the next 7 days, sorted by priority.
       ```
 
-2. **Unit-Test generieren**
-    - Nutze den Command `/tests`, um automatisch einen Unit-Test für die generierte Methode zu erstellen.
-    - Prompt im Chat:
-      ```
-      Generate a unit test for the method that fetches tasks due within the next 7 days, sorted by priority.
-      ```
-
-3. **Javadoc generieren**
+2. **Javadoc generieren**
     - **Option 1:** Setze `/**` vor die Methode, um Javadoc automatisch zu generieren.
     - **Option 2:** Nutze den Command `/docs`, um Javadoc für die gesamte Klasse zu erstellen.
         - Prompt im Chat:
           ```
           Generate Javadoc for the TaskController class.
           ```
-
-4. **Code analysieren und vereinfachen**
+          
+3. **Code analysieren und vereinfachen**
     - Beziehe dich auf die Methode `getTasksDueSoonComplicated()` in der Klasse `TaskService`, die bewusst kompliziert geschrieben wurde.
 
    #### **Code erklären**
@@ -110,6 +103,12 @@ Willkommen zum Hands-On Teil des GitHub Copilot Workshops! Dieses Repository beg
     - Zeige den Unterschied zwischen der ursprünglichen und der vereinfachten Version.
     - Betone, wie Copilot den Code wartbarer und besser lesbar macht.
 
+4. **Unit-Test generieren**
+   - Nutze den Command `/tests`, um automatisch einen Unit-Test für die Methode TaskService#getTasksDueSoonComplicated zu erstellen.
+   - Prompt im Chat:
+     ```
+     Generate a unit test for the method that fetches tasks due within the next 7 days, sorted by priority.
+     ```
 5. **Fehlschlagenden Unit-Test reparieren**
     - Manipuliere einen Test, um einen Fehler zu verursachen, und führe ihn aus.
     - Prompt im Chat:
